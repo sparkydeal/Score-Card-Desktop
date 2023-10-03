@@ -1,0 +1,128 @@
+@font-face {
+    font-family: "Cursed Timer ULiL";
+    src: url(CursedTimerULiL.ttf);
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.html {
+    font-size: 62.5%;
+ 
+}
+
+body {
+    background: #1B244A;
+    font-family: "Cursed Timer ULiL";
+    
+}
+
+/* flex */
+.container {
+    width: 80%;
+    margin: 80px auto;
+    display: flex;
+    flex-flow: column;
+    gap: 2em;
+}
+.score-board, .fouls-board {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    
+}
+.side {
+    width: 40%;
+    font-size: 2em;
+    display: flex;
+    flex-flow: column;
+    gap: .5em;
+    
+}
+.point-types {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-top: .2em;
+    
+    
+}
+button.points {
+    border-radius: .2em;
+    border: 1px solid #9AABD8;
+    font-size: 1.2em;
+    background: white;
+    padding: .1em .3em;
+    width: 2em;
+    font-family: "Cursed Timer ULiL";
+    color: #9AABD8;
+    background: #1B244A;
+}
+button.points:hover {
+    color: pink;
+    
+}
+.new-game {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.new-game .points {
+    font-size: 2em;
+    width: 33%;
+    
+    
+    
+    
+    padding-top: .3em;
+}
+.score {
+    display: flex;
+    flex-flow: column;
+    gap: .5em 0;
+    
+}
+.value, .count-down {
+    background: #080001;
+    color: #F94F6D;
+    text-align: center;
+    padding: .2em;
+    font-size: 6rem;
+    
+}
+.score-heading {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    padding: .5em 0 0;
+    color: white;
+}
+.green {
+    color: green;
+}
+.count-down {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    
+    
+
+}
+.timer {
+    display: flex;
+    flex-flow: row;
+}
+.timer-buttons {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 2em;
+}
+
+
+/* end flex */

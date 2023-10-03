@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Team</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="score-board">
+            <div class="side home-side">
+                <h3 class="score-heading home-heading">HOME</h3>
+                <div class="score">
+                    <div class="value home-score-value">0</div>
+                    <div class="point-types">
+                        <button class="points one-point">+1</button>
+                        <button class="points two-point">+2</button>
+                        <button class="points three-point">+3</button>
+                    </div>
+                </div>
+            </div>
+            <div class="side guest-side">
+                <h3 class="score-heading guest-heading" >GUEST</h3>
+                <div class="score">
+                    <div class="value guest-score-value">0</div>
+                    <div class="point-types">
+                        <button class="points one-point">+1</button>
+                        <button class="points two-point">+2</button>
+                        <button class="points three-point">+3</button>
+                    </div>
+                </div>
+            </div> 
+            
+            
+        </div> <!-- end score-board -->
+        <div class="fouls-board"> <!-- fouls-board -->
+            <div class="side home-side">
+                <h3 class="score-heading home-heading">FOULS</h3>
+                <div class="score">
+                    <div class="value home-score-fouls">0</div>
+                    <div class="point-types">
+                        <button class="points h-add">+</button>
+                        <button class="points h-subtract">-</button>
+                    </div>
+                </div>
+            </div>
+            <div class="side guest-side">
+                <h3 class="score-heading guest-heading" >FOULS</h3>
+                <div class="score">
+                    <div class="value guest-score-fouls">0</div>
+                    <div class="point-types">
+                        <button class="points g-add">+</button>
+                        <button class="points g-subtract">-</button>
+                        
+                    </div>
+                </div>
+            </div> 
+            
+             
+        </div> <!-- end fouls-board -->
+        <div class="timer">
+            <div class="timer-buttons left-timer-buttons">
+                <button class="points m-add">+</button>
+                <button class="points m-subtract">-</button>
+            </div>
+            <div class="count-down">
+                END
+            </div>
+            <div class="timer-buttons right-timer-buttons">
+                <button class="points s-add">+</button>
+                <button class="points s-subtract">-</button> 
+            </div>  
+        </div>
+        
+        <div class="new-game">
+            <button class="points new-game-text stop-game-btn">Stop</button>
+            <button class="points new-game-text continue-game-btn">Continue</button>
+            <button class="points new-game-text new-game-btn">New</button>
+        </div>
+        
+    </div> <!-- end container -->
+    <script src="utilities.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
