@@ -82,7 +82,7 @@ function continueGame() {
         
         
     
-    },100);
+    },1000);
     }
 function stop() {
     clearInterval(timerId);
