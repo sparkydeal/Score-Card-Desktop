@@ -51,6 +51,12 @@
         flex-flow: column;
         gap: .5em;
     }
+    .emoji {
+        width: 100%;
+        transform: scale(2);
+        text-align: center;
+        
+    }
     .btn-types {
         display: flex;
         flex-flow: row;
@@ -142,6 +148,7 @@
         justify-content: space-between;
         
     } 
+    
     .error-message {
         color:red;
     }

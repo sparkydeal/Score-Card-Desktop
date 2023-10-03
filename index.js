@@ -25,7 +25,10 @@ function initializeForNewGame() {
 
 
 
-
+let homeEmoji = document.querySelector('.home-side .emoji');
+let guestEmoji = document.querySelector('.guest-side .emoji');
+let happyEmoji  = '😁';
+let sadEmoji = '😟';
 let homeOneBtn = document.querySelector('.home-side .one-point');
 let homeTwoBtn = document.querySelector('.home-side .two-point');
 let homeThreeBtn = document.querySelector('.home-side .three-point');
@@ -127,13 +130,19 @@ function addScore(team,val) {
     if (homeScoreSum > guestScoreSum) {
         homeScore.classList.add("green");
         guestScore.classList.remove("green");
+        homeEmoji.textContent = happyEmoji;
+        guestEmoji.textContent = sadEmoji;
 
     } else if (homeScoreSum < guestScoreSum) {
         guestScore.classList.add("green");
         homeScore.classList.remove("green");
+        homeEmoji.textContent = sadEmoji;
+        guestEmoji.textContent = happyEmoji;
     } else if (homeScoreSum == guestScoreSum) {
         homeScore.classList.remove("green");
         guestScore.classList.remove("green");
+        homeEmoji.textContent = happyEmoji;
+        guestEmoji.textContent = happyEmoji;
 
     }
     
