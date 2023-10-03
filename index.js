@@ -299,16 +299,20 @@ function reset() {
 let c = (...args) => console.log(...args);
 let newGame = true;
 let gameStopped = false;
+let errorMessage = document.querySelector('.error-message');
+
 let newGameBtn = document.querySelector('.new-game-btn');
 newGameBtn.addEventListener('click',function() {
     
     if (gameStopped || newGame) {
+        errorMessage.textContent = '';
         newGame = false;
         gameStopped = false;
         start();
     } else {
         
-        alert('Stop game first, before starting a new game');
+        // alert('Stop game first, before starting a new game');
+        errorMessage.textContent = 'Press the stop button, then a new game !';
         
     }
 
