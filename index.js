@@ -1,6 +1,12 @@
 function start() {
-
+// start is run when user click the new button
 // before you can start a new game game must be stopped manually first
+// therefore if a persone hits the new button, it checks if the flag has been set
+// in the stop function which is called if someone clicked stopped
+// if it wasnt clicked first a message shows, to tell them to first click stop before
+// pressing the new button.
+// however if this is a brand new game, then its will start even without the stop being pressed.
+// it knows this is a new start by looking at the newstart flag
 
 
 
@@ -11,7 +17,7 @@ let guestScore = document.querySelector('.guest-score-value');
 let homeFouls = document.querySelector('.home-score-fouls');
 let guestFouls = document.querySelector('.guest-score-fouls');
 let countDown = document.querySelector('.count-down');
-initializeForNewGame();
+initializeForNewGame(); // resets the variables and score display vales
 function initializeForNewGame() {
     
     
@@ -23,12 +29,12 @@ function initializeForNewGame() {
     guestScore.classList.remove("green");
 }
 
-
+// gets hooks for the buttons and other values needed to be populated
 
 let homeEmoji = document.querySelector('.home-side .emoji');
 let guestEmoji = document.querySelector('.guest-side .emoji');
-let happyEmoji  = '😁';
-let sadEmoji = '😟';
+let happyEmoji  = ['😁','🥳','😂',' 😛 '];
+let sadEmoji = ['😟','😡','😟','🥸'];
 let homeOneBtn = document.querySelector('.home-side .one-point');
 let homeTwoBtn = document.querySelector('.home-side .two-point');
 let homeThreeBtn = document.querySelector('.home-side .three-point');
@@ -61,6 +67,7 @@ guestThreeBtn.addEventListener('click',function() {
 });
 let timeCaught;
 let timerId;
+// continueGame call by the continue button
 function continueGame() {
     timerId = setInterval(function() {
         seconds--;
@@ -87,6 +94,7 @@ function continueGame() {
         }
     },1000);
 }
+// called by the stop button
 function stop() {
     
     clearInterval(timerId);
@@ -97,7 +105,8 @@ function stop() {
     
     
     
-}    
+}  
+// called by the continue button  
 continueGame();
 function addScore(team,val) {
     if (team == 1) {
@@ -130,19 +139,19 @@ function addScore(team,val) {
     if (homeScoreSum > guestScoreSum) {
         homeScore.classList.add("green");
         guestScore.classList.remove("green");
-        homeEmoji.textContent = happyEmoji;
-        guestEmoji.textContent = sadEmoji;
+        homeEmoji.textContent = happyEmoji[Math.floor(Math.random()*4)];
+        guestEmoji.textContent = sadEmoji[Math.floor(Math.random()*4)];
 
     } else if (homeScoreSum < guestScoreSum) {
         guestScore.classList.add("green");
         homeScore.classList.remove("green");
-        homeEmoji.textContent = sadEmoji;
-        guestEmoji.textContent = happyEmoji;
+        homeEmoji.textContent = sadEmoji[Math.floor(Math.random()*4)];;
+        guestEmoji.textContent = happyEmoji[Math.floor(Math.random()*4)];;
     } else if (homeScoreSum == guestScoreSum) {
         homeScore.classList.remove("green");
         guestScore.classList.remove("green");
-        homeEmoji.textContent = happyEmoji;
-        guestEmoji.textContent = happyEmoji;
+        homeEmoji.textContent = happyEmoji[0];;
+        guestEmoji.textContent = happyEmoji[0];
 
     }
     
@@ -236,7 +245,9 @@ function changeTimer(type,change) {
     // change 1 = increase by 1
     // change 2 = decrease by 1
     timeCaught = countDown.textContent;
+    
     minutes = parseInt(timeCaught.substring(0,2));
+    
     seconds = parseInt(timeCaught.substring(3,5));
     if (type == 1) { //minutes
       if (change == 1) // increase
@@ -248,7 +259,7 @@ function changeTimer(type,change) {
         minutes = 59;
     if (minutes < 0) 
         minutes = 0; 
-        
+            
     if (type == 2) { //seconds
         if (change == 1) // increase
           seconds++;
