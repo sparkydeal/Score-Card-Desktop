@@ -47,6 +47,7 @@
     .side {
         width: 45%;
         font-size: 1.5rem;
+
         display: flex;
         flex-flow: column;
         gap: .5em;
@@ -105,6 +106,8 @@
         text-align: center;
         
         font-size: 4rem;
+        
+        box-shadow: 0 0 5px rgb(184, 172, 172);
         
     }
     .value {
